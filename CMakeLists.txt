@@ -8,6 +8,7 @@ target_include_directories(glfw3webgpu PUBLIC .)
 target_link_libraries(glfw3webgpu PUBLIC glfw3 webgpu_native)
 
 if (APPLE)
+  target_include_directories(glfw3webgpu PUBLIC /opt/local/lib)
   target_compile_options(glfw3webgpu PRIVATE -x objective-c)
   target_link_libraries(glfw3webgpu PRIVATE "-framework Cocoa" "-framework CoreVideo" "-framework IOKit" "-framework QuartzCore")
 endif ()
